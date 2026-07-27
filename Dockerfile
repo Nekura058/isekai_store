@@ -11,11 +11,21 @@ RUN apt-get update && apt-get install -y \
 
 RUN a2enmod rewrite
 
-RUN rm -f /var/www/html/index.html
+# Write a clean virtual host config pointing to /var/www/html
+RUN echo '<VirtualHost *:80>\n\
+    DocumentRoot /var/www/html\n\
+    <Directory /var/www/html>\n\
+        AllowOverride All\n\
+        Require all granted\n\
+        DirectoryIndex index.php index.html\n\
+    </Directory>\n\
+</VirtualHost>' > /etc/apache2/sites-available/000-default.conf
 
+# Copy project files
 COPY . /var/www/html/
 
-RUN sed -i 's/AllowOverride None/AllowOverride All/g' /etc/apache2/sites-available/000-default.conf
+# Remove any default Ubuntu Apache page
+RUN rm -f /var/www/html/index.html
 
 EXPOSE 80
 
