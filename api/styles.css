@@ -1,0 +1,328 @@
+/* General Styling */
+body {
+    font-family: Arial, sans-serif;
+    background: url("edellaen.gif") no-repeat center center fixed;
+    background-size: cover;
+    color: #ddd;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Header */
+header {
+    background: #091f3c;
+    padding: 20px;
+    color: white;
+    font-size: 26px;
+    font-weight: bold;
+    text-align: center;
+    position: relative;
+}
+
+/* Navigation Bar */
+.navbar {
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(255, 255, 255, 0.2);
+}
+
+.navbar a {
+    color: white;
+    padding: 10px 15px;
+    text-decoration: none;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+.navbar a:hover {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
+}
+
+.nav-right {
+    margin-right: 20px;
+}
+
+/* Logo */
+.logo {
+    position: absolute;
+    top: 10px;
+    left: 15px;
+    width: 120px;
+    height: auto;
+    z-index: 999;
+    animation: floatUpDown 4s infinite ease-in-out, glowEffect 2s infinite alternate;
+}
+
+/* Floating Effect */
+@keyframes floatUpDown {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+    100% { transform: translateY(0); }
+}
+
+/* Glowing Effect */
+@keyframes glowEffect {
+    0% { filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.5)); }
+    100% { filter: drop-shadow(0 0 15px rgba(255, 255, 255, 1)); }
+}
+
+/* Categories Section */
+.categories {
+    width: 80%;
+    max-width: 1000px;
+    margin: 100px auto 40px auto; /* Adjusted for fixed navbar */
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.6);
+    box-shadow: 0px 4px 8px rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+}
+
+.categories h3 {
+    color: #f8c200;
+    text-shadow: 2px 2px 10px rgba(255, 255, 255, 0.8);
+    margin-top: 20px;
+}
+
+/* Product Section */
+.product-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+.product-item {
+    width: 280px;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.6);
+    box-shadow: 0px 4px 8px rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.product-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 6px 12px rgba(255, 255, 255, 0.3);
+}
+
+.product-item img {
+    width: 100%;
+    border-radius: 8px;
+}
+
+.product-item h4 {
+    margin: 10px 0;
+    font-size: 18px;
+    color: #f8c200;
+}
+
+.product-item p {
+    font-size: 14px;
+    margin: 8px 0;
+}
+
+/* Buttons */
+button {
+    background: linear-gradient(45deg, #f8c200, #ffdb4d);
+    color: black;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: linear-gradient(45deg, #ffdb4d, #f8c200);
+    transform: scale(1.05);
+}
+
+/* Footer */
+footer {
+    margin-top: auto;
+    background: #091f3c;
+    padding: 10px;
+    color: white;
+    font-size: 14px;
+    text-align: center;
+}
+
+/* About Section */
+.about-container {
+    width: 80%;
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.6);
+    box-shadow: 0px 4px 8px rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+}
+
+h2 {
+    color: #f8c200;
+    text-shadow: 2px 2px 10px rgba(255, 255, 255, 0.8);
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+ul li {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 5px;
+}
+
+/* Form Styling */
+form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    width: 80%;
+    max-width: 500px; /* Adjust to your preference */
+    background: rgba(0, 0, 0, 0.6);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(255, 255, 255, 0.2);
+    margin: 20px auto;
+    text-align: center;
+}
+
+form label {
+    display: block;
+    margin: 10px 0 5px;
+    font-weight: bold;
+    width: 100%;
+}
+
+form input {
+    width: 100%; /* Makes input fields take full available width */
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+form button {
+    width: 100%; /* Makes button take full width */
+    padding: 10px;
+    background: linear-gradient(45deg, #f8c200, #ffdb4d);
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+form button:hover {
+    background: linear-gradient(45deg, #ffdb4d, #f8c200);
+    transform: scale(1.05);
+}
+
+/* Error Messages */
+.error {
+    color: #ff4d4d;
+    font-weight: bold;
+    background: rgba(255, 0, 0, 0.2);
+    padding: 5px;
+    border-radius: 5px;
+    margin: 10px auto;
+    width: 100%;
+    text-align: center;
+}
+
+/* Cart Table */
+table {
+    width: 80%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    box-shadow: 0px 4px 8px rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+th, td {
+    padding: 12px;
+    text-align: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+th {
+    background: rgba(0, 0, 0, 0.8);
+    font-size: 18px;
+}
+
+td {
+    font-size: 16px;
+}
+
+/* Cart Buttons */
+button, a button {
+    padding: 10px 15px;
+    margin: 5px;
+    background: linear-gradient(45deg, #f8c200, #ffdb4d);
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+    text-decoration: none;
+}
+
+button:hover, a button:hover {
+    background: linear-gradient(45deg, #ffdb4d, #f8c200);
+    transform: scale(1.05);
+}
+
+/* Quantity Input */
+input[type="number"] {
+    width: 60px;
+    padding: 5px;
+    text-align: center;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    background: rgba(255, 255, 255, 0.8);
+}
+
+/* Empty Cart Message */
+p {
+    font-size: 18px;
+    font-weight: bold;
+    color: #ffdb4d;
+}
+
+a.back-to-dashboard:hover {
+    background: linear-gradient(45deg, #ffdb4d, #f8c200);
+    transform: scale(1.05);}
+
+    a.back-to-dashboard {
+        padding: 10px 15px;
+        background: linear-gradient(45deg, #f8c200, #ffdb4d);
+        border: none;
+        border-radius: 5px;
+        font-weight: bold;
+        cursor: pointer;
+        text-decoration: none; /* Remove default underline */
+        display: inline-block;
+        transition: 0.3s;
+    }
